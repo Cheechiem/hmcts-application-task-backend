@@ -5,7 +5,6 @@ import com.hmcts.dev.hmcts_backend.domain.Task;
 import com.hmcts.dev.hmcts_backend.dto.TaskDto;
 import com.hmcts.dev.hmcts_backend.mappers.TaskMapper;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @Service
 public class TaskService {
@@ -18,7 +17,7 @@ public class TaskService {
         this.taskMapper = taskMapper;
     }
 
-    public TaskDto createTask(@RequestBody TaskDto taskDto) {
+    public TaskDto createTask(TaskDto taskDto) {
         Task task = taskMapper.toEntity(taskDto);
         return taskMapper.toDto(
                 taskRepository.save(task));
