@@ -1,22 +1,29 @@
 ## HMCTS DEVELOPER TEST BACKEND
 
-Allows you to create a new task via POST localhost:8080/task/create
+Allows you to create a new task
 
-```http Request Object
-POST /task/create
+POST /task/create | Runs on Localhost:8080 by default
+
 Content-Type: application/json
+
+**Request Body:**
+
+```json
 {
   "title": "String",
   "description": "String",
   "status": "String",
-  "dueTateTime": "DateTime" format:"2025-12-07T10:30:00"
+  "dueTateTime": "2025-12-07T10:30:00"
 }
+```
 
-Response Object
+**Response Body:**
+```json
 {
   "id": "String",
   "title": "String",
   "description": "String",
   "status": "String",
-  "dueTateTime": "DateTime" format:"2025-12-07T10:30:00"
+  "dueTateTime": "2025-12-07T10:30:00"
 }
+```
